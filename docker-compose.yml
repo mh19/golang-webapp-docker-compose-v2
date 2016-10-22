@@ -1,0 +1,14 @@
+
+version: "2"
+
+services:
+  appdocker:
+    image: golang:alpine
+    volumes:
+      - .:/go/src/appdocker
+    working_dir: /go/src/appdocker
+    ports:
+      - "8000:8000"
+    environment:
+      - TEST=abc
+    command: go run main.go
